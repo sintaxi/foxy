@@ -9,7 +9,7 @@ describe("foxy", function(){
     var app = connect()
 
     app.use(foxy({
-      "/proxy": "http://localhost:7002"
+      "/proxy": "http://127.0.0.1:7002"
     }))
 
     app.listen(7001, function(){
@@ -37,7 +37,7 @@ describe("foxy", function(){
 
   it("should match ", function(done){
     var options = {
-      url: "http://localhost:7001/proxy"
+      url: "http://localhost:7001/proxy/foo"
     }
     request(options, function(err, response, body){
       should.not.exist(err)
