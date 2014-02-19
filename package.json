@@ -1,0 +1,23 @@
+{
+  "name": "foxy",
+  "version": "0.1.0",
+  "description": "a simple proxy middle for CORS",
+  "author": "Brock Whitten <brock@chloi.io>",
+  "main": "lib/foxy.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "keywords": [
+    "proxy",
+    "harp"
+  ],
+  "dependencies": {
+    "request": "2.34.0"
+  },
+  "devDependencies": {
+    "mocha": "1.17.1",
+    "should": "3.1.2",
+    "connect": "2.13.0"
+  },
+  "license": "MIT"
+}
