@@ -11,6 +11,11 @@
     "proxy",
     "harp"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sintaxi/foxy.git"
+  },
+  "bugs": "http://github.com/sintaxi/foxy/issues",
   "dependencies": {
     "request": "2.34.0"
   },
