@@ -8,10 +8,14 @@ describe("foxy", function(){
   before(function(done){
     var app = connect()
 
-    app.use(foxy({}))
+    app.use(foxy({
+      "/proxy": "http://localhost:7002"
+    }))
 
     app.listen(7001, function(){
-      done()
+      connect(function(req, rsp){ rsp.end("hit proxy"); }).listen(7002, function(){
+        done()
+      })
     })
   })
 
@@ -27,6 +31,17 @@ describe("foxy", function(){
     request(options, function(err, response, body){
       should.not.exist(err)
       response.statusCode.should.eql(404)
+      done()
+    })
+  })
+
+  it("should match ", function(done){
+    var options = {
+      url: "http://localhost:7001/proxy"
+    }
+    request(options, function(err, response, body){
+      should.not.exist(err)
+      response.statusCode.should.eql(200)
       done()
     })
   })
